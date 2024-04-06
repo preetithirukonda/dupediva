@@ -15,6 +15,7 @@
 		A7E80DFB2BBDE1670064DC75 /* dupedivaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80DFA2BBDE1670064DC75 /* dupedivaTests.swift */; };
 		A7E80E052BBDE1670064DC75 /* dupedivaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80E042BBDE1670064DC75 /* dupedivaUITests.swift */; };
 		A7E80E072BBDE1670064DC75 /* dupedivaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80E062BBDE1670064DC75 /* dupedivaUITestsLaunchTests.swift */; };
+		A7E80E162BBDE5D20064DC75 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80E152BBDE5D20064DC75 /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A7E80E002BBDE1670064DC75 /* dupedivaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dupedivaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E80E042BBDE1670064DC75 /* dupedivaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dupedivaUITests.swift; sourceTree = "<group>"; };
 		A7E80E062BBDE1670064DC75 /* dupedivaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dupedivaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A7E80E152BBDE5D20064DC75 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */,
 				A7E80DE82BBDE1650064DC75 /* ContentView.swift */,
+				A7E80E152BBDE5D20064DC75 /* test.swift */,
 				A7E80DEA2BBDE1650064DC75 /* Item.swift */,
 				A7E80DEC2BBDE1670064DC75 /* Assets.xcassets */,
 				A7E80DEE2BBDE1670064DC75 /* dupediva.entitlements */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E80DE92BBDE1650064DC75 /* ContentView.swift in Sources */,
+				A7E80E162BBDE5D20064DC75 /* test.swift in Sources */,
 				A7E80DEB2BBDE1650064DC75 /* Item.swift in Sources */,
 				A7E80DE72BBDE1650064DC75 /* dupedivaApp.swift in Sources */,
 			);
