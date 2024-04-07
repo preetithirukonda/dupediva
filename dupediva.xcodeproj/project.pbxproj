@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55B764F981F02FC439C7E57F /* Pods_dupedivaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D061167C41AA91D56A4B1E /* Pods_dupedivaTests.framework */; };
+		89D3F2CD1174E792BFD059F9 /* Pods_dupediva_dupedivaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C656AA6C294928A870860C1 /* Pods_dupediva_dupedivaUITests.framework */; };
 		A7E80DE72BBDE1650064DC75 /* dupedivaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */; };
 		A7E80DE92BBDE1650064DC75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80DE82BBDE1650064DC75 /* ContentView.swift */; };
 		A7E80DEB2BBDE1650064DC75 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80DEA2BBDE1650064DC75 /* Item.swift */; };
@@ -16,6 +18,8 @@
 		A7E80E052BBDE1670064DC75 /* dupedivaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80E042BBDE1670064DC75 /* dupedivaUITests.swift */; };
 		A7E80E072BBDE1670064DC75 /* dupedivaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80E062BBDE1670064DC75 /* dupedivaUITestsLaunchTests.swift */; };
 		A7E80E162BBDE5D20064DC75 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80E152BBDE5D20064DC75 /* test.swift */; };
+		A7E80E182BC303500064DC75 /* AnalyzePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80E172BC303500064DC75 /* AnalyzePage.swift */; };
+		E7131C8DF0D3CAF64696F0C5 /* Pods_dupediva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1C41BBCB9D372C10E08453 /* Pods_dupediva.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		516E4706A9F28B062E01F46C /* Pods-dupediva-dupedivaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva-dupedivaUITests.debug.xcconfig"; path = "Target Support Files/Pods-dupediva-dupedivaUITests/Pods-dupediva-dupedivaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		51D061167C41AA91D56A4B1E /* Pods_dupedivaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dupedivaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51DCE308ECC8D8AC08BD477F /* Pods-dupediva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva.release.xcconfig"; path = "Target Support Files/Pods-dupediva/Pods-dupediva.release.xcconfig"; sourceTree = "<group>"; };
+		6C656AA6C294928A870860C1 /* Pods_dupediva_dupedivaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dupediva_dupedivaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1C41BBCB9D372C10E08453 /* Pods_dupediva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dupediva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E80DE32BBDE1650064DC75 /* dupediva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dupediva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dupedivaApp.swift; sourceTree = "<group>"; };
 		A7E80DE82BBDE1650064DC75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +58,11 @@
 		A7E80E042BBDE1670064DC75 /* dupedivaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dupedivaUITests.swift; sourceTree = "<group>"; };
 		A7E80E062BBDE1670064DC75 /* dupedivaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dupedivaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A7E80E152BBDE5D20064DC75 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		A7E80E172BC303500064DC75 /* AnalyzePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePage.swift; sourceTree = "<group>"; };
+		ACC094123B737828A75E4C6A /* Pods-dupediva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva.debug.xcconfig"; path = "Target Support Files/Pods-dupediva/Pods-dupediva.debug.xcconfig"; sourceTree = "<group>"; };
+		B8CBD4ED6788E99D2B04B5E1 /* Pods-dupedivaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupedivaTests.debug.xcconfig"; path = "Target Support Files/Pods-dupedivaTests/Pods-dupedivaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2F6918A0EA3E4800BD12BD4 /* Pods-dupediva-dupedivaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva-dupedivaUITests.release.xcconfig"; path = "Target Support Files/Pods-dupediva-dupedivaUITests/Pods-dupediva-dupedivaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EAD36195A49A3D3B96D343E5 /* Pods-dupedivaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupedivaTests.release.xcconfig"; path = "Target Support Files/Pods-dupedivaTests/Pods-dupedivaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7131C8DF0D3CAF64696F0C5 /* Pods_dupediva.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B764F981F02FC439C7E57F /* Pods_dupedivaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +86,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D3F2CD1174E792BFD059F9 /* Pods_dupediva_dupedivaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78871838F7FAC2CF7AC32E85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ACC094123B737828A75E4C6A /* Pods-dupediva.debug.xcconfig */,
+				51DCE308ECC8D8AC08BD477F /* Pods-dupediva.release.xcconfig */,
+				516E4706A9F28B062E01F46C /* Pods-dupediva-dupedivaUITests.debug.xcconfig */,
+				C2F6918A0EA3E4800BD12BD4 /* Pods-dupediva-dupedivaUITests.release.xcconfig */,
+				B8CBD4ED6788E99D2B04B5E1 /* Pods-dupedivaTests.debug.xcconfig */,
+				EAD36195A49A3D3B96D343E5 /* Pods-dupedivaTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A7E80DDA2BBDE1650064DC75 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +114,8 @@
 				A7E80DF92BBDE1670064DC75 /* dupedivaTests */,
 				A7E80E032BBDE1670064DC75 /* dupedivaUITests */,
 				A7E80DE42BBDE1650064DC75 /* Products */,
+				78871838F7FAC2CF7AC32E85 /* Pods */,
+				CAF8FB50508AF21C50E13E15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +135,7 @@
 				A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */,
 				A7E80DE82BBDE1650064DC75 /* ContentView.swift */,
 				A7E80E152BBDE5D20064DC75 /* test.swift */,
+				A7E80E172BC303500064DC75 /* AnalyzePage.swift */,
 				A7E80DEA2BBDE1650064DC75 /* Item.swift */,
 				A7E80DEC2BBDE1670064DC75 /* Assets.xcassets */,
 				A7E80DEE2BBDE1670064DC75 /* dupediva.entitlements */,
@@ -135,6 +169,16 @@
 			path = dupedivaUITests;
 			sourceTree = "<group>";
 		};
+		CAF8FB50508AF21C50E13E15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D1C41BBCB9D372C10E08453 /* Pods_dupediva.framework */,
+				6C656AA6C294928A870860C1 /* Pods_dupediva_dupedivaUITests.framework */,
+				51D061167C41AA91D56A4B1E /* Pods_dupedivaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7E80E0A2BBDE1670064DC75 /* Build configuration list for PBXNativeTarget "dupediva" */;
 			buildPhases = (
+				6CFB2E09EAAC9B13B68C7F76 /* [CP] Check Pods Manifest.lock */,
 				A7E80DDF2BBDE1650064DC75 /* Sources */,
 				A7E80DE02BBDE1650064DC75 /* Frameworks */,
 				A7E80DE12BBDE1650064DC75 /* Resources */,
+				FC4981642B03880D622C8641 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7E80E0D2BBDE1670064DC75 /* Build configuration list for PBXNativeTarget "dupedivaTests" */;
 			buildPhases = (
+				F484D8EE5D49D01D3ADA09F3 /* [CP] Check Pods Manifest.lock */,
 				A7E80DF22BBDE1670064DC75 /* Sources */,
 				A7E80DF32BBDE1670064DC75 /* Frameworks */,
 				A7E80DF42BBDE1670064DC75 /* Resources */,
@@ -177,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7E80E102BBDE1670064DC75 /* Build configuration list for PBXNativeTarget "dupedivaUITests" */;
 			buildPhases = (
+				FC421A2F5C7BBE971A67DE4C /* [CP] Check Pods Manifest.lock */,
 				A7E80DFC2BBDE1670064DC75 /* Sources */,
 				A7E80DFD2BBDE1670064DC75 /* Frameworks */,
 				A7E80DFE2BBDE1670064DC75 /* Resources */,
+				FE4EF9A9E5E5C42145AB0C99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +309,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6CFB2E09EAAC9B13B68C7F76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dupediva-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F484D8EE5D49D01D3ADA09F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dupedivaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC421A2F5C7BBE971A67DE4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dupediva-dupedivaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC4981642B03880D622C8641 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dupediva/Pods-dupediva-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dupediva/Pods-dupediva-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dupediva/Pods-dupediva-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE4EF9A9E5E5C42145AB0C99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dupediva-dupedivaUITests/Pods-dupediva-dupedivaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dupediva-dupedivaUITests/Pods-dupediva-dupedivaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dupediva-dupedivaUITests/Pods-dupediva-dupedivaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7E80DDF2BBDE1650064DC75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -267,6 +419,7 @@
 			files = (
 				A7E80DE92BBDE1650064DC75 /* ContentView.swift in Sources */,
 				A7E80E162BBDE5D20064DC75 /* test.swift in Sources */,
+				A7E80E182BC303500064DC75 /* AnalyzePage.swift in Sources */,
 				A7E80DEB2BBDE1650064DC75 /* Item.swift in Sources */,
 				A7E80DE72BBDE1650064DC75 /* dupedivaApp.swift in Sources */,
 			);
@@ -421,6 +574,7 @@
 		};
 		A7E80E0B2BBDE1670064DC75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACC094123B737828A75E4C6A /* Pods-dupediva.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -457,6 +611,7 @@
 		};
 		A7E80E0C2BBDE1670064DC75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51DCE308ECC8D8AC08BD477F /* Pods-dupediva.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -493,6 +648,7 @@
 		};
 		A7E80E0E2BBDE1670064DC75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8CBD4ED6788E99D2B04B5E1 /* Pods-dupedivaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +671,7 @@
 		};
 		A7E80E0F2BBDE1670064DC75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAD36195A49A3D3B96D343E5 /* Pods-dupedivaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -537,6 +694,7 @@
 		};
 		A7E80E112BBDE1670064DC75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 516E4706A9F28B062E01F46C /* Pods-dupediva-dupedivaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +716,7 @@
 		};
 		A7E80E122BBDE1670064DC75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2F6918A0EA3E4800BD12BD4 /* Pods-dupediva-dupedivaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

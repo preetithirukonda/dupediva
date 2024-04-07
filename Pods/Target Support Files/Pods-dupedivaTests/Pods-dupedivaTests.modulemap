@@ -1,0 +1,6 @@
+framework module Pods_dupedivaTests {
+  umbrella header "Pods-dupedivaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
