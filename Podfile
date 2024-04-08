@@ -6,7 +6,8 @@ target 'dupediva' do
   use_frameworks!
 
   # Pods for dupediva
-  pod 'Alamofire', '4.9.1'
+  #pod 'Alamofire', '~> 4.9.1'
+ 
 
   target 'dupedivaTests' do
     inherit! :search_paths
