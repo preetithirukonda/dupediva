@@ -14,20 +14,23 @@ struct TestView: View{
     
     var body: some View{
         // Text("test class")
-        
-        Button(
-            action:{
-                print("test")
-                showSheet.toggle()
-            },
-            label:{
-                Text("test button")
+        NavigationStack{
+            
+            Button(
+                action:{
+                    print("test")
+                    showSheet.toggle()
+                },
+                label:{
+                    Text("test button")
+                }
+            ).buttonStyle(.borderedProminent) .sheet(isPresented: $showSheet){
+                SheetView()
             }
-        ).buttonStyle(.borderedProminent) .sheet(isPresented: $showSheet){
-            SheetView()
+            
+            NavigationLink("Click here", destination: OtherView())
         }
-    }
-}
+    }}
 
 
 struct SheetView: View{

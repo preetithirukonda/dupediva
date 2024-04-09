@@ -37,7 +37,7 @@ struct ContentView: View {
                 ToolbarItem {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")
-                        print("print")
+                      
                     }
                 }
             }

@@ -10,7 +10,7 @@ import UIKit
 //import Foundation
 //import Alamofire
 
-class ViewController: UIViewController {
+class AnalyzePage: UIViewController {
     
  //   let apiKey = "60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5"
   //  let searchQuery = "blue-floral-maxi-skirt"
