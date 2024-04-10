@@ -14,6 +14,7 @@ struct ImagePicker: UIViewControllerRepresentable{
     
     @Binding var selectedImage: UIImage?
     @Binding var isPickerShowing: Bool
+  //  @Binding var donePicking: Bool
     
     func makeUIViewController(context: Context) -> some UIViewController {
         let imagePicker = UIImagePickerController()
@@ -46,6 +47,7 @@ class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationContro
             //we got the image
             DispatchQueue.main.async{
                 self.parent.selectedImage = image
+             //   self.parent.donePicking = true
             }
         }
         //dismiss the picker
