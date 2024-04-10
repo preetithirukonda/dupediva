@@ -22,6 +22,8 @@
 		A7E80E162BBDE5D20064DC75 /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80E152BBDE5D20064DC75 /* Landing.swift */; };
 		A7E80E182BC303500064DC75 /* AnalyzePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80E172BC303500064DC75 /* AnalyzePage.swift */; };
 		A7E80E1A2BC35EA70064DC75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E80E192BC35EA70064DC75 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A7ED3FE72BC6392E000D0156 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ED3FE62BC6392E000D0156 /* ImagePicker.swift */; };
+		A7ED3FE92BC6394A000D0156 /* ImageCam.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ED3FE82BC6394A000D0156 /* ImageCam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		A7E80E152BBDE5D20064DC75 /* Landing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
 		A7E80E172BC303500064DC75 /* AnalyzePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePage.swift; sourceTree = "<group>"; };
 		A7E80E192BC35EA70064DC75 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		A7ED3FE62BC6392E000D0156 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A7ED3FE82BC6394A000D0156 /* ImageCam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCam.swift; sourceTree = "<group>"; };
 		AECF4FE92707C4FDEB660DBA /* Pods-dupediva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva.debug.xcconfig"; path = "Target Support Files/Pods-dupediva/Pods-dupediva.debug.xcconfig"; sourceTree = "<group>"; };
 		C1B3F72D6E7711501B565BDE /* Pods_dupediva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dupediva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38D0DE0B047932D8BE399DD /* Pods-dupediva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva.release.xcconfig"; path = "Target Support Files/Pods-dupediva/Pods-dupediva.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,12 +143,14 @@
 				A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */,
 				A7E80DE82BBDE1650064DC75 /* ContentView.swift */,
 				A7E80E152BBDE5D20064DC75 /* Landing.swift */,
+				A7ED3FE62BC6392E000D0156 /* ImagePicker.swift */,
 				A7E80E172BC303500064DC75 /* AnalyzePage.swift */,
 				A7E80DEA2BBDE1650064DC75 /* Item.swift */,
 				A7E80DEC2BBDE1670064DC75 /* Assets.xcassets */,
 				A7E80DEE2BBDE1670064DC75 /* dupediva.entitlements */,
 				A7E80DEF2BBDE1670064DC75 /* Preview Content */,
 				A7D712FB2BC4E7AE006BBD20 /* OtherView.swift */,
+				A7ED3FE82BC6394A000D0156 /* ImageCam.swift */,
 			);
 			path = dupediva;
 			sourceTree = "<group>";
@@ -396,7 +402,9 @@
 				A7E80DE92BBDE1650064DC75 /* ContentView.swift in Sources */,
 				A7E80E162BBDE5D20064DC75 /* Landing.swift in Sources */,
 				A7E80E182BC303500064DC75 /* AnalyzePage.swift in Sources */,
+				A7ED3FE72BC6392E000D0156 /* ImagePicker.swift in Sources */,
 				A7E80DEB2BBDE1650064DC75 /* Item.swift in Sources */,
+				A7ED3FE92BC6394A000D0156 /* ImageCam.swift in Sources */,
 				A7E80DE72BBDE1650064DC75 /* dupedivaApp.swift in Sources */,
 				A7D712FC2BC4E7AF006BBD20 /* OtherView.swift in Sources */,
 			);
