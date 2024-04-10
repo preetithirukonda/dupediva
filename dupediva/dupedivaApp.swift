@@ -23,11 +23,11 @@ struct dupedivaApp: App {
         }
     }()
 
-    var body: some Scene {
-        WindowGroup {
-      //  ContentView()
+var body: some Scene {
+   WindowGroup {
+        //ContentView()
            // AnalyzePage()
-            TestView()
+        TestView()
         }
         .modelContainer(sharedModelContainer)
     }

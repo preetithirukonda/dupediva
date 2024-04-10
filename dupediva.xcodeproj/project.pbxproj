@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		015D51262C38AA1D68D595B2 /* Pods_dupediva_dupedivaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66C66C8489D1A8207E0450D /* Pods_dupediva_dupedivaUITests.framework */; };
 		65E02B829376BB308C828F6E /* Pods_dupedivaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A33E784C278E0A81E6E587 /* Pods_dupedivaTests.framework */; };
+		7CDBF8AA2BC61CC300961741 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDBF8A92BC61CC300961741 /* GoogleGenerativeAI */; };
 		A7D712FC2BC4E7AF006BBD20 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D712FB2BC4E7AE006BBD20 /* OtherView.swift */; };
 		A7E80DE72BBDE1650064DC75 /* dupedivaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */; };
 		A7E80DE92BBDE1650064DC75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80DE82BBDE1650064DC75 /* ContentView.swift */; };
@@ -74,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E80E1A2BC35EA70064DC75 /* UIKit.framework in Frameworks */,
+				7CDBF8AA2BC61CC300961741 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +202,9 @@
 			dependencies = (
 			);
 			name = dupediva;
+			packageProductDependencies = (
+				7CDBF8A92BC61CC300961741 /* GoogleGenerativeAI */,
+			);
 			productName = dupediva;
 			productReference = A7E80DE32BBDE1650064DC75 /* dupediva.app */;
 			productType = "com.apple.product-type.application";
@@ -250,7 +255,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					A7E80DE22BBDE1650064DC75 = {
 						CreatedOnToolsVersion = 15.2;
@@ -274,6 +279,9 @@
 				Base,
 			);
 			mainGroup = A7E80DDA2BBDE1650064DC75;
+			packageReferences = (
+				7CDBF8A82BC61CA300961741 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			productRefGroup = A7E80DE42BBDE1650064DC75 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -461,6 +469,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -522,6 +531,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -550,6 +560,7 @@
 				CODE_SIGN_ENTITLEMENTS = dupediva/dupediva.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"dupediva/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -588,6 +599,7 @@
 				CODE_SIGN_ENTITLEMENTS = dupediva/dupediva.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"dupediva/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -625,6 +637,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -648,6 +661,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -670,6 +684,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -692,6 +707,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -747,6 +763,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7CDBF8A82BC61CA300961741 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7CDBF8A92BC61CC300961741 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CDBF8A82BC61CA300961741 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A7E80DDB2BBDE1650064DC75 /* Project object */;
 }

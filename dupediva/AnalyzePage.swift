@@ -1,41 +1,75 @@
 //
-//  AnalyzePage.swift
+//  File.swift
 //  dupediva
 //
-//  Created by Preeti Thirukonda on 4/7/24.
+//  Created by Vaishy Kumar on 4/8/24.
 //
-//#if canImport(UIKit) && !os(macOS)
-import UIKit
 
-//import Foundation
-//import Alamofire
+import Foundation
+import GoogleGenerativeAI
 
-class AnalyzePage: UIViewController {
+
+//struct Wrapper: Codable {
+//    let items: [Question]
+//}
+//
+//struct Question: Codable {
+//    let score: Int
+//    let title: String
+//}
+
+func performAPICall() -> Void {
     
- //   let apiKey = "60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5"
-  //  let searchQuery = "blue-floral-maxi-skirt"
-    let apiUrl = "https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=purple-sweater"
+    let inputurl = "https://lurkingclass.com/cdn/shop/products/1964BK_THORNS_SWEATER_LURKING_CLASS_BY_SKETCHY_TANK_02B_1024x1024.jpg?v=1643842749"
+    //    let u1 = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyAsIZ7U934OKyFifKJPDJDdua4aJyPCqd4"
+    let u1 = "https://serpapi.com/search?engine=google_reverse_image&image_url=" + inputurl + "&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5"
+    //let u2 = "https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=" + productname
+    let url = URL(string: u1)!
+    //
+    //    //"https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=purple-sweater")!
+    //
+    //    //"https://serpapi.com/search?engine=google_reverse_image&image_url=https://i.imgur.com/5bGzZi7.jpg&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5"
+    //
+    var request = URLRequest(url: url)
     
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        fetchPhotos()
-    }
-    func fetchPhotos(){
-        guard let url = URL(string: apiUrl)else{
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data, error == nil else{
-                return
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        if let error = error {
+            print(error)
+        } else if let data = data {
+            
+            let str = String(data: data, encoding: .utf8)!
+            //print(str ?? "")
+            let model = GenerativeModel(name: "gemini-1.0-pro", apiKey: "AIzaSyAsIZ7U934OKyFifKJPDJDdua4aJyPCqd4")
+            let prompt = "Find the most specific response from this JSON file of API responses. I prefer a responses that includes color, material, type of clothing and please exclude brand name. " + str
+            Task{
+                let response = try await model.generateContent(prompt)
+                let r = response.text?.components(separatedBy: "text")
+                let r2 = r![0]
+                print(r2)
+                
+                let u2 = "https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=" + r2;
+                let url = URL(string: u2)!
+                var request = URLRequest(url: url)
+                let task2 = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                        if let error = error {
+                            print(error)
+                        } else if let data = data {
+                            
+                            let str = String(data: data, encoding: .utf8)!
+                            print(str)
+                            
+                        }
+                    
+                }
+                task2.resume()
             }
-            print("Got data!")
+            
         }
-        task.resume()
     }
-    
- 
-    
-}
+    task.resume()
+            
+            
+    }
 
+    
 
-//#endif

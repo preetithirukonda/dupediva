@@ -18,11 +18,11 @@ struct TestView: View{
             
             Button(
                 action:{
-                    print("test")
+                    performAPICall()
                     showSheet.toggle()
                 },
                 label:{
-                    Text("test button")
+                    Text("API button")
                 }
             ).buttonStyle(.borderedProminent) .sheet(isPresented: $showSheet){
                 SheetView()
