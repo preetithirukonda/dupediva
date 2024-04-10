@@ -27,7 +27,7 @@ var body: some Scene {
    WindowGroup {
         //ContentView()
            // AnalyzePage()
-        TestView()
+        LandingView()
         }
         .modelContainer(sharedModelContainer)
     }

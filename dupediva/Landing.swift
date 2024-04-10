@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct TestView: View{
+struct LandingView: View{
     
     @State private var showSheet: Bool = false
     
@@ -50,6 +50,6 @@ struct SheetView: View{
 
 struct TestView_Previews: PreviewProvider{
     static var previews: some View{
-        TestView()
+        LandingView()
     }
 }
