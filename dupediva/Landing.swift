@@ -22,69 +22,78 @@ struct LandingView: View{
             VStack{
                 //selected image
                 if let image = selectedImage{
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 2)
-                                .stroke(Color.purple, lineWidth: 4))
-                        .frame(width:300, height:400)
-                    //api button
+                    VStack{
+
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 2)
+                                    .stroke(Color.purple, lineWidth: 4))
+                            .frame(width:300, height:400)
+                        //api button
+                        Button(
+                            action:{
+                                performAPICall()
+                                showSheet.toggle()
+                            },
+                            label:{
+                                Text("Search for Similar Products(API button)")
+                            }
+                        ).buttonStyle(PurpleButtonStyle())
+                    }
+                }else{
+                    //upload and camera buttons
+                    
+                    HStack{
+                        Button{
+                            isPickerShowing = true
+                        }label:{
+                            Text("Select a Photo").foregroundColor(Color.white)
+                        }.buttonStyle(PurpleButtonStyle())
+                            .sheet(isPresented: $isPickerShowing, onDismiss: nil){
+                                //image picker
+                                ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                            }
+                        //camera
+                        Button{
+                            isCamShowing = true
+                        }label:{
+                            Text("Take a Photo")
+                        }.buttonStyle(PurpleButtonStyle())
+                            .sheet(isPresented: $isCamShowing, onDismiss: nil){
+                                //image cam
+                                ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing)
+                            }
+                    }.padding()
+                    
+                    NavigationLink("Click here", destination: OtherView()).buttonStyle(PurpleButtonStyle())
+                    
+                    //login button
                     Button(
                         action:{
-                            performAPICall()
+                            
+                            print("test")
                             showSheet.toggle()
+                      
                         },
                         label:{
-                            Text("Search for Similar Products(API button)")
+                            Text("Login")
                         }
-                    ).buttonStyle(PurpleButtonStyle())
+                    ).buttonStyle(PurpleButtonStyle()) .sheet(isPresented: $showSheet){
+                        SheetView(isSheetShowing: $showSheet)
+                    }
                 }
                
                 
-                //upload and camera buttons
-                
-                HStack{
-                    Button{
-                        isPickerShowing = true
-                    }label:{
-                        Text("Select a Photo").foregroundColor(Color.white)
-                    }.buttonStyle(PurpleButtonStyle())
-                        .sheet(isPresented: $isPickerShowing, onDismiss: nil){
-                            //image picker
-                            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
-                        }
-                    //camera
-                    Button{
-                        isCamShowing = true
-                    }label:{
-                        Text("Take a Photo")
-                    }.buttonStyle(PurpleButtonStyle())
-                        .sheet(isPresented: $isCamShowing, onDismiss: nil){
-                            //image cam
-                            ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing)
-                        }
-                }.padding()
-                
-                //NavigationLink("Click here", destination: OtherView())
-                
-                //login button
-                Button(
-                    action:{
-                        
-                        print("test")
-                        showSheet.toggle()
-                    },
-                    label:{
-                        Text("Login")
-                    }
-                ).buttonStyle(PurpleButtonStyle()) .sheet(isPresented: $showSheet){
-                    SheetView(isSheetShowing: $showSheet)
-                }
+              
             }
         }
     }
 }
+
+//struct SearchView: View{
+//    var body: some View{}}
 
 
 struct SheetView: View{
