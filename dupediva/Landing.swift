@@ -8,10 +8,13 @@
 import Foundation
 import SwiftUI
 
+public var isPickerShowing = false
+
+
 struct LandingView: View{
     @State private var showSheet: Bool = false
-    @State var isPickerShowing = false
-    @State var selectedImage: UIImage?
+    @State public var isPickerShowing = false
+    @State public var selectedImage: UIImage?
     @State var isAPIButtonPressed: Bool = false
     @State var isCamShowing = false
     
@@ -38,11 +41,12 @@ struct LandingView: View{
                         
                         Button(action: {
                             print("button tapped")
+                            //let _ = performAPICall(selectedImage: $selectedImage)
                             //performAPICall()
                         },
                                label: {
                             NavigationLink(destination: SearchView()) {
-                                Text("Search for Similar Products(API button)")
+                                Text("Search for Similar Products!")
                                 
                             }.buttonStyle(PurpleButtonStyle())
                         })
@@ -121,6 +125,7 @@ struct LandingView: View{
                         action:{
                             
                             print("test")
+                            
                             showSheet.toggle()
                             
                         },
@@ -153,11 +158,12 @@ struct SearchView: View{
         //  print("in second view")
         //  Text(str)
         Button{
-            print("search view")
+            
         }label: {
             Text("hi")
+            //Text(ImagePicker(selectedImage: LandingView().$selectedImage, isPickerShowing: LandingView().$isPickerShowing).APIrequest());
         }
-        let _ = performAPICall()
+        //let _ = performAPICall(selectedImage: $selectedImage)
         
         
         
