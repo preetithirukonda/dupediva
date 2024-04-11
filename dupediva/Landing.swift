@@ -140,13 +140,16 @@ struct LandingView: View{
 }
 
 struct SearchView: View{
+    //for the keywords, gemini will give us these
     @State var color:String = ""
     @State var material:String = ""
-    @State var product:String = ""
+    @State var productType:String = ""
+    
+    //for each product (not needed here but j putting here for now)
     @State var price:Double = 0
     @State var link:String = ""
     @State var imgLink:String = ""
-    
+    @State var title:String = ""
     
     var body: some View{
         Text("Search view")
@@ -157,7 +160,12 @@ struct SearchView: View{
         }label: {
             Text("hi")
         }
-        let _ = performAPICall()
+ //      let _ = performAPICall()
+        
+        //get the products from the json file - parse it
+        //display each product?
+        
+        
         
         
         

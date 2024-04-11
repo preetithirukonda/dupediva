@@ -56,7 +56,8 @@ func performAPICall() -> Void {
                         } else if let data = data {
                             
                             let str = String(data: data, encoding: .utf8)!
-                            print(str)
+                           // print(str)
+                            parseJSON(data: str)
                             
                         }
                     
@@ -71,5 +72,10 @@ func performAPICall() -> Void {
             
     }
 
+func parseJSON(data: String) {
+  print(data)
     
+    
+}
+
 
