@@ -24,6 +24,8 @@
 		A7E80E1A2BC35EA70064DC75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E80E192BC35EA70064DC75 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A7ED3FE72BC6392E000D0156 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ED3FE62BC6392E000D0156 /* ImagePicker.swift */; };
 		A7ED3FE92BC6394A000D0156 /* ImageCam.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ED3FE82BC6394A000D0156 /* ImageCam.swift */; };
+		C55D663F2BC8834E00972BB0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55D663E2BC8834E00972BB0 /* Storyboard.storyboard */; };
+		C55D66432BC8B30F00972BB0 /* StoryboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55D66422BC8B30F00972BB0 /* StoryboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		A7ED3FE82BC6394A000D0156 /* ImageCam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCam.swift; sourceTree = "<group>"; };
 		AECF4FE92707C4FDEB660DBA /* Pods-dupediva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva.debug.xcconfig"; path = "Target Support Files/Pods-dupediva/Pods-dupediva.debug.xcconfig"; sourceTree = "<group>"; };
 		C1B3F72D6E7711501B565BDE /* Pods_dupediva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dupediva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55D663E2BC8834E00972BB0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		C55D66422BC8B30F00972BB0 /* StoryboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardView.swift; sourceTree = "<group>"; };
 		D38D0DE0B047932D8BE399DD /* Pods-dupediva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva.release.xcconfig"; path = "Target Support Files/Pods-dupediva/Pods-dupediva.release.xcconfig"; sourceTree = "<group>"; };
 		D66C66C8489D1A8207E0450D /* Pods_dupediva_dupedivaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dupediva_dupedivaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6BA69501B9059F1F9B51C9 /* Pods-dupediva-dupedivaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva-dupedivaUITests.release.xcconfig"; path = "Target Support Files/Pods-dupediva-dupedivaUITests/Pods-dupediva-dupedivaUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		A7E80DE52BBDE1650064DC75 /* dupediva */ = {
 			isa = PBXGroup;
 			children = (
+				C55D663E2BC8834E00972BB0 /* Storyboard.storyboard */,
 				A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */,
 				A7E80DE82BBDE1650064DC75 /* ContentView.swift */,
 				A7E80E152BBDE5D20064DC75 /* Landing.swift */,
@@ -151,6 +156,7 @@
 				A7E80DEF2BBDE1670064DC75 /* Preview Content */,
 				A7D712FB2BC4E7AE006BBD20 /* OtherView.swift */,
 				A7ED3FE82BC6394A000D0156 /* ImageCam.swift */,
+				C55D66422BC8B30F00972BB0 /* StoryboardView.swift */,
 			);
 			path = dupediva;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 			files = (
 				A7E80DF12BBDE1670064DC75 /* Preview Assets.xcassets in Resources */,
 				A7E80DED2BBDE1670064DC75 /* Assets.xcassets in Resources */,
+				C55D663F2BC8834E00972BB0 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +408,7 @@
 			files = (
 				A7E80DE92BBDE1650064DC75 /* ContentView.swift in Sources */,
 				A7E80E162BBDE5D20064DC75 /* Landing.swift in Sources */,
+				C55D66432BC8B30F00972BB0 /* StoryboardView.swift in Sources */,
 				A7E80E182BC303500064DC75 /* AnalyzePage.swift in Sources */,
 				A7ED3FE72BC6392E000D0156 /* ImagePicker.swift in Sources */,
 				A7E80DEB2BBDE1650064DC75 /* Item.swift in Sources */,

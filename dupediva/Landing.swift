@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 
 public var isPickerShowing = false
 
@@ -17,6 +18,11 @@ struct LandingView: View{
     @State public var selectedImage: UIImage?
     @State var isAPIButtonPressed: Bool = false
     @State var isCamShowing = false
+    
+//    @State private var selectedImage: UIImage?
+//       @State private var isPickerShowing = false
+//       @State private var isCamShowing = false
+//       @State private var isSheetShowing = false
     
     @State var str: String = ""
     
@@ -33,23 +39,35 @@ struct LandingView: View{
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                            .frame(width: 300, height: 400)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 2)
                                     .stroke(Color.purple, lineWidth: 4))
+                            
                             .frame(width:300, height:400)
                         //api button
                         
+                        
                         Button(action: {
-                            print("button tapped")
-                            //let _ = performAPICall(selectedImage: $selectedImage)
-                            //performAPICall()
-                        },
-                               label: {
-                            NavigationLink(destination: SearchView()) {
-                                Text("Search for Similar Products!")
-                                
-                            }.buttonStyle(PurpleButtonStyle())
-                        })
+                    //navigateToStoryboardView()
+                            NavigationLink(destination: UIStoryboard())
+                         }) {
+                           Text("Search for Similar Products!")
+                          }
+                          .buttonStyle(PurpleButtonStyle())
+                        
+//                        Button(action: {
+//                            print("button tapped")
+//                            
+//                            //let _ = performAPICall(selectedImage: $selectedImage)
+//                            //performAPICall()
+//                        },
+//                               label: {
+//                            NavigationLink(destination: SearchView()) {
+//                                Text("Search for Similar Products!")
+//                                
+//                            }.buttonStyle(PurpleButtonStyle())
+//                        })
                         
                         
                         //start api button
@@ -142,6 +160,22 @@ struct LandingView: View{
             }
         }
     }
+    
+    private func navigateToStoryboardView() {
+            // Load the storyboard file
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
+
+        // Attempt to instantiate the view controller with the specified identifier
+        // Attempt to instantiate the view controller with the specified identifier
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "MyViewController") as? MyViewController {
+            // Use the view controller here
+        } else {
+            print("Unable to instantiate view controller from storyboard.")
+        }
+            
+            // Present the view controller
+            UIApplication.shared.windows.first?.rootViewController?.present(viewController, animated: true, completion: nil)
+        }
 }
 
 struct SearchView: View{
@@ -169,6 +203,7 @@ struct SearchView: View{
         
     }
 }
+
 
 
 struct SheetView: View{

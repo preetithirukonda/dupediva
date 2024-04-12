@@ -78,7 +78,7 @@ class Coordinator2: NSObject, UIImagePickerControllerDelegate, UINavigationContr
             DispatchQueue.main.async{
                 self.parent.selectedImage = image
                 self.parent.isCamShowing = false //dismissing camera
-                self.parent.APIrequest()
+                //self.parent.APIrequest()
             }
         }
       
