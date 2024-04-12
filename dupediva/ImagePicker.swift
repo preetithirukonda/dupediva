@@ -11,42 +11,51 @@ import UIKit
 import SwiftUI
 import GoogleGenerativeAI
 
+
 struct ImagePicker: UIViewControllerRepresentable{
     
     @Binding var selectedImage: UIImage?
     @Binding var isPickerShowing: Bool
-  //  @Binding var donePicking: Bool
+    @Binding var productList: [Product]
+    //  @Binding var donePicking: Bool
     
     public func APIrequest() -> Void {
         let model = GenerativeModel(name: "gemini-pro-vision", apiKey: "AIzaSyAsIZ7U934OKyFifKJPDJDdua4aJyPCqd4")
         let prompt = "What is this piece of clothing? Please include color, material, type of clothing and exclude brand name."
         let i = selectedImage!
         let str = ""
-            Task{
-                let response = try await model.generateContent(prompt, i)
-                let r = response.text?.components(separatedBy: "text")
-                let r2 = r![0]
-                print(r2)
-                
-                let u2 = "https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=" + r2;
-                let url = URL(string: u2)!
-                let request = URLRequest(url: url)
-                let task2 = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                        if let error = error {
-                            print(error)
-                        } else if let data = data {
-                            
-                            let str = String(data: data, encoding: .utf8)!
-                            print(str)
-                            
-                        }
+        Task{
+            let response = try await model.generateContent(prompt, i)
+            let r = response.text?.components(separatedBy: "text")
+            let r2 = r![0]
+            print(r2)
+            
+            let u2 = "https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=" + r2;
+            let url = URL(string: u2)!
+            let request = URLRequest(url: url)
+            let task2 = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    print(error)
+                } else if let data = data {
+                    let str = String(data: data, encoding: .utf8)!
+                    //    let y = ProductList.parse(str:str)
+                    //   print(y)
+                    //  if  y{
+                    //    print("product parse method called")
+                    //   }
+                    
+                    //str has all the data in the "json file"
+                    print(str)
+                    productList =  ProductList.parse(str: str)
                     
                 }
-                task2.resume()
+                
             }
-
+            task2.resume()
+        }
         
-    
+        
+        
     }
     
     public func makeUIViewController(context: Context) -> some UIViewController {
@@ -64,34 +73,34 @@ struct ImagePicker: UIViewControllerRepresentable{
         return Coordinator(self)
     }
     
-//    public func performAPICall() -> Void {
-//        let model = GenerativeModel(name: "gemini-pro-vision", apiKey: "AIzaSyAsIZ7U934OKyFifKJPDJDdua4aJyPCqd4")
-//        let image = getImage();
-//        let prompt = "What is this piece of clothing? Please include color, material, type of clothing and exclude brand name."
-//        Task{
-//            let response = try await model.generateContent(prompt, image)
-//            let r = response.text?.components(separatedBy: "text")
-//            let r2 = r![0]
-//            print(r2)
-//            
-//            let u2 = "https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=" + r2;
-//            let url = URL(string: u2)!
-//            var request = URLRequest(url: url)
-//            let task2 = URLSession.shared.dataTask(with: request) { (data, response, error) in
-//                    if let error = error {
-//                        print(error)
-//                    } else if let data = data {
-//                        
-//                        let str = String(data: data, encoding: .utf8)!
-//                        print(str)
-//                        
-//                    }
-//                
-//            }
-//            task2.resume()
-//        }
-//    }
-//    
+    //    public func performAPICall() -> Void {
+    //        let model = GenerativeModel(name: "gemini-pro-vision", apiKey: "AIzaSyAsIZ7U934OKyFifKJPDJDdua4aJyPCqd4")
+    //        let image = getImage();
+    //        let prompt = "What is this piece of clothing? Please include color, material, type of clothing and exclude brand name."
+    //        Task{
+    //            let response = try await model.generateContent(prompt, image)
+    //            let r = response.text?.components(separatedBy: "text")
+    //            let r2 = r![0]
+    //            print(r2)
+    //
+    //            let u2 = "https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=" + r2;
+    //            let url = URL(string: u2)!
+    //            var request = URLRequest(url: url)
+    //            let task2 = URLSession.shared.dataTask(with: request) { (data, response, error) in
+    //                    if let error = error {
+    //                        print(error)
+    //                    } else if let data = data {
+    //
+    //                        let str = String(data: data, encoding: .utf8)!
+    //                        print(str)
+    //
+    //                    }
+    //
+    //            }
+    //            task2.resume()
+    //        }
+    //    }
+    //
 }
 
 class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -109,8 +118,8 @@ class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationContro
             //we got the image
             DispatchQueue.main.async{
                 self.parent.selectedImage = image
-             //   self.parent.donePicking = true
-               self.parent.APIrequest();
+                //   self.parent.donePicking = true
+                self.parent.APIrequest();
             }
         }
         //dismiss the picker
@@ -126,3 +135,6 @@ class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationContro
         parent.isPickerShowing = false
     }
 }
+
+
+

@@ -17,7 +17,7 @@ struct LandingView: View{
     @State public var selectedImage: UIImage?
     @State var isAPIButtonPressed: Bool = false
     @State var isCamShowing = false
-    
+    @State var productList: [Product]
     @State var str: String = ""
     
     
@@ -41,6 +41,7 @@ struct LandingView: View{
                         
                         Button(action: {
                             print("button tapped")
+                           // ImagePicker.APIrequest()
                             //let _ = performAPICall(selectedImage: $selectedImage)
                             //performAPICall()
                         },
@@ -144,6 +145,7 @@ struct LandingView: View{
     }
 }
 
+//this is the page that has all the similar products
 struct SearchView: View{
     @State var color:String = ""
     @State var material:String = ""
