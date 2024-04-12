@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+import SDWebImage
 
 class Product{
     
@@ -22,14 +24,17 @@ class Product{
     }
     
     func toDouble(str:String) -> Double{
-        // guard let doubleValue = Double(str) else {
-        //      print("Invalid input")
-        //       return -1
+        var doubleValue = Double(str) ?? -1.0
+        //else {
+        //print("Invalid input")
+        // return -1
         // }
         
         
         
-      //  return doubleValue = Double(str!) ?? -1.0
+        //  return doubleValue = Double(str!) ?? -1.0
+        
+        return doubleValue
         
         // return doubleValue
         return -1
@@ -94,7 +99,7 @@ class ProductList{
         var newImg: String = ""
         var newLink: String = ""
         var newPrice: String  = ""
-        // var priceStr: String = ""
+        var priceStr: String = ""
         
         //     let endCount = productI.count - 1
         //  let startCount = 0
@@ -121,69 +126,82 @@ class ProductList{
                 let startIndex = s.index(s.startIndex, offsetBy: 20)
                 let endIndex = s.index(s.endIndex, offsetBy: -2)
                 newImg = String(s[startIndex..<endIndex])
+                //                imageView.sd_setImage(with: URL(string: newImg), placeholderImage: UIImage(named: "placeholder.png"))
+                let imageUrlString = "http://cdn.playbuzz.com/cdn/38402fff-32a3-4e78-a532-41f3a54d04b9/cc513a85-8765-48a5-8481-98740cc6ccdc.jpg"
+                
+                let imageUrl = URL(string: imageUrlString)!
+                
+                let imageData = try! Data(contentsOf: imageUrl)
+                
+                let image = UIImage(data: imageData)
                 //newImg = s
+                
+                
+                
+                //
+                newPrice = ""//priceStr.toDouble()!
             }
         }
+            
+            return Product(title: newTitle, img: newImg, link: newLink, price: newPrice)
+            //        return newTitle+"\n\n"+newImg+"\n\n"+newLink+"\n\n"+priceStr
+            
+        }
         
-        //        newPrice = priceStr.toDouble()!
-        return Product(title: newTitle, img: newImg, link: newLink, price: newPrice)
-        //        return newTitle+"\n\n"+newImg+"\n\n"+newLink+"\n\n"+priceStr
+        //    func initProductIOLD(productI: [String]) -> Product{
+        //        var newTitle: String = ""
+        //        var newImg: String = ""
+        //        var newLink: String = ""
+        //        var newPrice: Double  = -1
+        //        var priceStr: String
+        //
+        //        let endCount = productI.count - 1
+        //        let startCount = 0
+        //
+        //
+        //        //  let titleSubstr = newTitle[]
+        //        for s in productI {
+        //            if s.contains("title"){
+        //                newTitle = s
+        //            } else if s.contains("extracted_price"){
+        //                priceStr = s
+        //            }else if s.contains("link") && !s.contains("product_link"){
+        //                newLink = s
+        //            }else if s.contains("thumbnail"){
+        //                newImg = s
+        //            }
+        //        }
+        //
+        //        return Product(title: newTitle, img: newImg, link: newLink, price: newPrice)
+        //
+        //    }
         
     }
     
-    //    func initProductIOLD(productI: [String]) -> Product{
-    //        var newTitle: String = ""
-    //        var newImg: String = ""
-    //        var newLink: String = ""
-    //        var newPrice: Double  = -1
-    //        var priceStr: String
-    //
-    //        let endCount = productI.count - 1
-    //        let startCount = 0
-    //
-    //
-    //        //  let titleSubstr = newTitle[]
-    //        for s in productI {
-    //            if s.contains("title"){
-    //                newTitle = s
-    //            } else if s.contains("extracted_price"){
-    //                priceStr = s
-    //            }else if s.contains("link") && !s.contains("product_link"){
-    //                newLink = s
-    //            }else if s.contains("thumbnail"){
-    //                newImg = s
-    //            }
-    //        }
-    //
-    //        return Product(title: newTitle, img: newImg, link: newLink, price: newPrice)
-    //
-    //    }
     
-}
-
-
-//let split = str.components(separatedBy: "\"shopping_results\"")
-//print("\n\n\n")
-////should be 3 elements
-//print(split.count)
-//print("\n\n\n")
-////we need the last of the three elements
-//print(split[1])
-//print("\n\n\n")
-//let products = split[1].components(separatedBy: "},\n    {")
-//print(products.count) //61
-//print(products[0]) //index out of range
-//print(products[1])
-//print("\n\n\n")
-//let productI = products[1].components(separatedBy: CharacterSet.newlines)
-////    print(productI)
-//for p in productI{
-//    print(p)
-//    print("\n")
-//}
-extension String {
-    func toDouble() -> Double? {
-        return NumberFormatter().number(from: self)?.doubleValue
-    }
-}
+    //let split = str.components(separatedBy: "\"shopping_results\"")
+    //print("\n\n\n")
+    ////should be 3 elements
+    //print(split.count)
+    //print("\n\n\n")
+    ////we need the last of the three elements
+    //print(split[1])
+    //print("\n\n\n")
+    //let products = split[1].components(separatedBy: "},\n    {")
+    //print(products.count) //61
+    //print(products[0]) //index out of range
+    //print(products[1])
+    //print("\n\n\n")
+    //let productI = products[1].components(separatedBy: CharacterSet.newlines)
+    ////    print(productI)
+    //for p in productI{
+    //    print(p)
+    //    print("\n")
+    //}
+//    extension String {
+//        func toDouble() -> Double? {
+//            return NumberFormatter().number(from: self)?.doubleValue
+//        }
+//    }
+    
 

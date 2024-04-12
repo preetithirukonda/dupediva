@@ -152,7 +152,7 @@ struct SearchView: View{
         // var img1: UIImage
         VStack{
             Text("Search view")
-            var image: UIImage? = displayImg(url: "HI")
+            var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
             if let img = image {
                 Image(uiImage: img)
             } else {
@@ -177,41 +177,50 @@ struct SearchView: View{
 }
 
 func displayImg(url: String) -> UIImage{
-    var image: UIImage
-    image = UIImage()
+    let imageUrlString = url
     
-    let catPictureURL = URL(string: "http://i.imgur.com/w5rkSIj.jpg")!
-    // Creating a session object with the default configuration.
-    // You can read more about it here https://developer.apple.com/reference/foundation/urlsessionconfiguration
-    let session = URLSession(configuration: .default)
+    let imageUrl = URL(string: imageUrlString)!
     
-    // Define a download task. The download task will download the contents of the URL as a Data object and then you can do what you wish with that data.
-    let downloadPicTask = session.dataTask(with: catPictureURL) { (data, response, error) in
-        // The download has finished.
-        if let e = error {
-            print("Error downloading cat picture: \(e)")
-        } else {
-            // No errors found.
-            // It would be weird if we didn't have a response, so check for that too.
-            if let res = response as? HTTPURLResponse {
-                print("Downloaded cat picture with response code \(res.statusCode)")
-                if let imageData = data {
-                    // Finally convert that Data into an image and do what you wish with it.
-                    let image = UIImage(data: imageData)
-                    print("image data worked")
-                    // Do something with your image.
-                } else {
-                    print("Couldn't get image: Image is nil")
-                }
-            } else {
-                print("Couldn't get response code for some reason")
-            }
-        }
-    }
+    let imageData = try! Data(contentsOf: imageUrl)
     
-    downloadPicTask.resume()
+    let image2 = UIImage(data: imageData)
     
-    return image
+    
+//    var image: UIImage
+//    image = UIImage()
+    
+//    let catPictureURL = URL(string: "http://i.imgur.com/w5rkSIj.jpg")!
+//    // Creating a session object with the default configuration.
+//    // You can read more about it here https://developer.apple.com/reference/foundation/urlsessionconfiguration
+//    let session = URLSession(configuration: .default)
+//    
+//    // Define a download task. The download task will download the contents of the URL as a Data object and then you can do what you wish with that data.
+//    let downloadPicTask = session.dataTask(with: catPictureURL) { (data, response, error) in
+//        // The download has finished.
+//        if let e = error {
+//            print("Error downloading cat picture: \(e)")
+//        } else {
+//            // No errors found.
+//            // It would be weird if we didn't have a response, so check for that too.
+//            if let res = response as? HTTPURLResponse {
+//                print("Downloaded cat picture with response code \(res.statusCode)")
+//                if let imageData = data {
+//                    // Finally convert that Data into an image and do what you wish with it.
+//                    let image = UIImage(data: imageData)
+//                    print("image data worked")
+//                    // Do something with your image.
+//                } else {
+//                    print("Couldn't get image: Image is nil")
+//                }
+//            } else {
+//                print("Couldn't get response code for some reason")
+//            }
+//        }
+//    }
+//    
+//    downloadPicTask.resume()
+    
+    return image2!
 }
 
 
@@ -255,6 +264,7 @@ struct SheetView: View{
 struct TestView_Previews: PreviewProvider{
     static var previews: some View{
         //   var list:[Product] = [Product(title: "", img: "", link: "", price: -1)]
+        var list:[Product] = [Product(title: "", img: "", link: "", price: "")]
         LandingView()
     }
 }

@@ -1,4 +1,5 @@
 {
+  "originHash" : "11687b3ab4c73f8f8653ffe2c2f4874b13a0022ba874dce844f82760bec93462",
   "pins" : [
     {
       "identity" : "generative-ai-swift",
@@ -8,7 +9,16 @@
         "revision" : "0976d0f6bb7bb8b1cf061a68c3cb59477c27730f",
         "version" : "0.4.10"
       }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vaishyk/SDWebImage.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f6afa0132961d593f07970d84e2d8b588c29ea04"
+      }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
