@@ -49,7 +49,7 @@ struct ImagePicker: UIViewControllerRepresentable{
                     print("\n\n\n\n\n")
                     productList =  ProductList.parse(str: str)
                     for p in productList{
-                        print(p)
+                        print(p.toString())
                     }
                 }
                 

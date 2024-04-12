@@ -15,15 +15,28 @@ class Product{
     let price: String
     
     init(title: String, img: String, link: String, price: String) {
-        
         self.title = title
         self.img = img
         self.link = link
         self.price = price
-        
     }
     
     
+    func getTitle() -> String{
+        return title
+    }
+    func getImg() -> String{
+        return img
+    }
+    func getLink() -> String{
+        return link
+    }
+    func getPrice() -> String{
+        return price
+    }
+    func toString() -> String{
+        return "Title: ["+title+"], Image Link: ["+img+"], Product Link: ["+link+"], Price: ["+price+"]"
+    }
 }
 
 class ProductList{
@@ -62,14 +75,15 @@ class ProductList{
         
     }
     static func initProductI(productI: [String]) -> Product{
+    
         var newTitle: String = ""
         var newImg: String = ""
         var newLink: String = ""
         var newPrice: String  = ""
         // var priceStr: String = ""
         
-        let endCount = productI.count - 1
-        let startCount = 0
+        //     let endCount = productI.count - 1
+        //  let startCount = 0
         
         
         
@@ -80,8 +94,8 @@ class ProductList{
                 let endIndex = s.index(s.endIndex, offsetBy: -2)
                 newTitle = String(s[startIndex..<endIndex])
             } else if s.contains("extracted_price"){
-                let startIndex = s.index(s.startIndex, offsetBy: 19)
-                let endIndex = s.index(s.endIndex, offsetBy: -2)
+                let startIndex = s.index(s.startIndex, offsetBy: 25)
+                let endIndex = s.index(s.endIndex, offsetBy: -1)
                 newPrice = String(s[startIndex..<endIndex])
                 // priceStr = s
             }else if s.contains("link") && !s.contains("product_link"){
@@ -109,11 +123,11 @@ class ProductList{
     //        var newLink: String = ""
     //        var newPrice: Double  = -1
     //        var priceStr: String
-    //        
+    //
     //        let endCount = productI.count - 1
     //        let startCount = 0
-    //        
-    //        
+    //
+    //
     //        //  let titleSubstr = newTitle[]
     //        for s in productI {
     //            if s.contains("title"){
@@ -126,9 +140,9 @@ class ProductList{
     //                newImg = s
     //            }
     //        }
-    //        
+    //
     //        return Product(title: newTitle, img: newImg, link: newLink, price: newPrice)
-    //        
+    //
     //    }
     
 }

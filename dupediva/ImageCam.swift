@@ -15,6 +15,7 @@ struct ImageCam: UIViewControllerRepresentable{
     
     @Binding var selectedImage: UIImage?
     @Binding var isCamShowing: Bool
+    @Binding var productList: [Product]
     
     func APIrequest() -> Void {
         let model = GenerativeModel(name: "gemini-pro-vision", apiKey: "AIzaSyAsIZ7U934OKyFifKJPDJDdua4aJyPCqd4")
@@ -36,6 +37,11 @@ struct ImageCam: UIViewControllerRepresentable{
                     
                     let str = String(data: data, encoding: .utf8)!
                     print(str)
+                    print("\n\n\n\n\n")
+                    productList =  ProductList.parse(str: str)
+                    for p in productList{
+                        print(p.toString())
+                    }
                     
                 }
                 

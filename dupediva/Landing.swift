@@ -85,7 +85,7 @@ struct LandingView: View{
                             }.buttonStyle(PurpleButtonStyle())
                                 .sheet(isPresented: $isCamShowing, onDismiss: nil){
                                     //image cam
-                                    ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing)
+                                    ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing, productList: $productList)
                                 }
                         }.padding()
                         
@@ -115,7 +115,7 @@ struct LandingView: View{
                         }.buttonStyle(PurpleButtonStyle())
                             .sheet(isPresented: $isCamShowing, onDismiss: nil){
                                 //image cam
-                                ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing)
+                                ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing, productList: $productList)
                             }
                     }.padding()
                     
@@ -147,14 +147,7 @@ struct LandingView: View{
 
 //this is the page that has all the similar products
 struct SearchView: View{
-    @State var color:String = ""
-    @State var material:String = ""
-    @State var product:String = ""
-    @State var price:Double = 0
-    @State var link:String = ""
-    @State var imgLink:String = ""
-    
-    
+ 
     var body: some View{
         Text("Search view")
         //  print("in second view")
@@ -163,6 +156,7 @@ struct SearchView: View{
             
         }label: {
             Text("hi")
+         
             //Text(ImagePicker(selectedImage: LandingView().$selectedImage, isPickerShowing: LandingView().$isPickerShowing).APIrequest());
         }
         //let _ = performAPICall(selectedImage: $selectedImage)
