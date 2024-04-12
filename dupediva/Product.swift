@@ -29,9 +29,10 @@ class Product{
         
         
         
-        return doubleValue = Double(str!) ?? -1.0
+      //  return doubleValue = Double(str!) ?? -1.0
         
         // return doubleValue
+        return -1
     }
     
     

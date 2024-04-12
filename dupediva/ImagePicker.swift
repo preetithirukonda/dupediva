@@ -130,7 +130,7 @@ class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationContro
             DispatchQueue.main.async{
                 self.parent.selectedImage = image
              //   self.parent.donePicking = true
-               self.parent.APIrequest();
+            //   self.parent.APIrequest();
             }
         }
         //dismiss the picker
