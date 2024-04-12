@@ -21,12 +21,24 @@ struct ImagePicker: UIViewControllerRepresentable{
         let model = GenerativeModel(name: "gemini-pro-vision", apiKey: "AIzaSyAsIZ7U934OKyFifKJPDJDdua4aJyPCqd4")
         let prompt = "What is this piece of clothing? Please include color, material, type of clothing and exclude brand name."
         let i = selectedImage!
-        let str = ""
             Task{
                 let response = try await model.generateContent(prompt, i)
                 let r = response.text?.components(separatedBy: "text")
                 let r2 = r![0]
                 print(r2)
+                let model2 = GenerativeModel(name: "gemini-pro", apiKey: "AIzaSyAsIZ7U934OKyFifKJPDJDdua4aJyPCqd4")
+                let prompt2 = "In this sentence, what is the color named? " + r2
+                let response2 = try await model2.generateContent(prompt2)
+                let r3 = response2.text?.components(separatedBy: "text")
+                // color of the piece of clothing!!
+                let color = r3![0]
+                print(color)
+                let prompt3 = "In this sentence, what is the material named? " + r2
+                let response3 = try await model2.generateContent(prompt3)
+                let r4 = response3.text?.components(separatedBy: "text")
+                // material of the piece of clothing!!
+                let material = r4![0]
+                print(material)
                 
                 let u2 = "https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=" + r2;
                 let url = URL(string: u2)!
