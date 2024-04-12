@@ -17,7 +17,7 @@ struct LandingView: View{
     @State public var selectedImage: UIImage?
     @State var isAPIButtonPressed: Bool = false
     @State var isCamShowing = false
-    @State var productList: [Product]
+    @State var productList: [Product] =  [Product(title: "", img: "", link: "", price: "")]
     @State var str: String = ""
     
     
@@ -75,7 +75,7 @@ struct LandingView: View{
                             }.buttonStyle(PurpleButtonStyle())
                                 .sheet(isPresented: $isPickerShowing, onDismiss: nil){
                                     //image picker
-                                    ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                                    ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, productList: $productList)
                                 }
                             //camera
                             Button{
@@ -105,7 +105,7 @@ struct LandingView: View{
                         }.buttonStyle(PurpleButtonStyle())
                             .sheet(isPresented: $isPickerShowing, onDismiss: nil){
                                 //image picker
-                                ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                                ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, productList: $productList)
                             }
                         //camera
                         Button{
@@ -212,6 +212,7 @@ struct SheetView: View{
 
 struct TestView_Previews: PreviewProvider{
     static var previews: some View{
+     //   var list:[Product] = [Product(title: "", img: "", link: "", price: -1)]
         LandingView()
     }
 }
