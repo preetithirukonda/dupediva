@@ -46,7 +46,7 @@ struct LandingView: View{
                             //performAPICall()
                         },
                                label: {
-                            NavigationLink(destination: SearchView()) {
+                            NavigationLink(destination: SearchView(productList: productList, selectedImage: selectedImage)) {
                                 Text("Search for Similar Products!")
                                 
                             }.buttonStyle(PurpleButtonStyle())
@@ -147,16 +147,103 @@ struct LandingView: View{
 
 //this is the page that has all the similar products
 struct SearchView: View{
+    @State var productList: [Product] =  [Product(title: "", img: "", link: "", price: "")]
+    @State public var selectedImage: UIImage?
     
     var body: some View{
         // var img1: UIImage
         VStack{
-            Text("Search view")
-            var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
-            if let img = image {
-                Image(uiImage: img)
-            } else {
-                Text("Loading image...")
+            //their input image
+            if let image = selectedImage{
+                //selected image
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width:140, height:140)
+                
+            }
+            Text("Similar Products:")
+            //similar product #1
+            HStack{
+                //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                
+                var image: UIImage? = displayImg(url: productList[1].getImg())
+                if let img = image {
+                    Image(uiImage: img) .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:140, height:140)
+                } else {
+                    Text("Loading image...")
+                }
+                VStack{
+                    Text(productList[1].getTitle())
+                    Text(productList[1].getPrice())
+                }
+            }
+         
+            HStack{
+                //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                
+                var image: UIImage? = displayImg(url: productList[2].getImg())
+                if let img = image {
+                    Image(uiImage: img) .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:140, height:140)
+                } else {
+                    Text("Loading image...")
+                }
+                VStack{
+                    Text(productList[2].getTitle())
+                    Text(productList[2].getPrice())
+                }
+            }
+            HStack{
+                //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                
+                var image: UIImage? = displayImg(url: productList[3].getImg())
+                if let img = image {
+                    Image(uiImage: img) .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:140, height:140)
+                } else {
+                    Text("Loading image...")
+                }
+                VStack{
+                    Text(productList[3].getTitle())
+                    Text(productList[3].getPrice())
+                }
+            }
+            HStack{
+                //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                
+                var image: UIImage? = displayImg(url: productList[4].getImg())
+                if let img = image {
+                    Image(uiImage: img) .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:140, height:140)
+                } else {
+                    Text("Loading image...")
+                }
+                VStack{
+                    Text(productList[4].getTitle())
+                    Text(productList[4].getPrice())
+                }
+            }
+            HStack{
+                //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                
+                var image: UIImage? = displayImg(url: productList[5].getImg())
+                if let img = image {
+                    Image(uiImage: img) .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:140, height:140)
+                } else {
+                    Text("Loading image...")
+                }
+                VStack{
+                    Text(productList[5].getTitle())
+                    Text(productList[5].getPrice())
+                }
             }
         }
         
@@ -186,39 +273,39 @@ func displayImg(url: String) -> UIImage{
     let image2 = UIImage(data: imageData)
     
     
-//    var image: UIImage
-//    image = UIImage()
+    //    var image: UIImage
+    //    image = UIImage()
     
-//    let catPictureURL = URL(string: "http://i.imgur.com/w5rkSIj.jpg")!
-//    // Creating a session object with the default configuration.
-//    // You can read more about it here https://developer.apple.com/reference/foundation/urlsessionconfiguration
-//    let session = URLSession(configuration: .default)
-//    
-//    // Define a download task. The download task will download the contents of the URL as a Data object and then you can do what you wish with that data.
-//    let downloadPicTask = session.dataTask(with: catPictureURL) { (data, response, error) in
-//        // The download has finished.
-//        if let e = error {
-//            print("Error downloading cat picture: \(e)")
-//        } else {
-//            // No errors found.
-//            // It would be weird if we didn't have a response, so check for that too.
-//            if let res = response as? HTTPURLResponse {
-//                print("Downloaded cat picture with response code \(res.statusCode)")
-//                if let imageData = data {
-//                    // Finally convert that Data into an image and do what you wish with it.
-//                    let image = UIImage(data: imageData)
-//                    print("image data worked")
-//                    // Do something with your image.
-//                } else {
-//                    print("Couldn't get image: Image is nil")
-//                }
-//            } else {
-//                print("Couldn't get response code for some reason")
-//            }
-//        }
-//    }
-//    
-//    downloadPicTask.resume()
+    //    let catPictureURL = URL(string: "http://i.imgur.com/w5rkSIj.jpg")!
+    //    // Creating a session object with the default configuration.
+    //    // You can read more about it here https://developer.apple.com/reference/foundation/urlsessionconfiguration
+    //    let session = URLSession(configuration: .default)
+    //
+    //    // Define a download task. The download task will download the contents of the URL as a Data object and then you can do what you wish with that data.
+    //    let downloadPicTask = session.dataTask(with: catPictureURL) { (data, response, error) in
+    //        // The download has finished.
+    //        if let e = error {
+    //            print("Error downloading cat picture: \(e)")
+    //        } else {
+    //            // No errors found.
+    //            // It would be weird if we didn't have a response, so check for that too.
+    //            if let res = response as? HTTPURLResponse {
+    //                print("Downloaded cat picture with response code \(res.statusCode)")
+    //                if let imageData = data {
+    //                    // Finally convert that Data into an image and do what you wish with it.
+    //                    let image = UIImage(data: imageData)
+    //                    print("image data worked")
+    //                    // Do something with your image.
+    //                } else {
+    //                    print("Couldn't get image: Image is nil")
+    //                }
+    //            } else {
+    //                print("Couldn't get response code for some reason")
+    //            }
+    //        }
+    //    }
+    //
+    //    downloadPicTask.resume()
     
     return image2!
 }

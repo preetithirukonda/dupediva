@@ -1,5 +1,4 @@
 {
-  "originHash" : "11687b3ab4c73f8f8653ffe2c2f4874b13a0022ba874dce844f82760bec93462",
   "pins" : [
     {
       "identity" : "generative-ai-swift",
@@ -20,5 +19,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }
