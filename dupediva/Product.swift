@@ -21,6 +21,19 @@ class Product{
         self.price = price
     }
     
+    func toDouble(str:String) -> Double{
+        // guard let doubleValue = Double(str) else {
+        //      print("Invalid input")
+        //       return -1
+        // }
+        
+        
+        
+        return doubleValue = Double(str!) ?? -1.0
+        
+        // return doubleValue
+    }
+    
     
     func getTitle() -> String{
         return title
@@ -75,7 +88,7 @@ class ProductList{
         
     }
     static func initProductI(productI: [String]) -> Product{
-    
+        
         var newTitle: String = ""
         var newImg: String = ""
         var newLink: String = ""
