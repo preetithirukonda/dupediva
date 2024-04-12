@@ -65,9 +65,14 @@ class ProductList{
         self.productList = productList
     }
     
+    func getProduct(index: Int) -> Product{
+        return productList[index]
+    }
+    
     static func parse(str: String) -> [Product]{
         var products: [Product]  =  [Product(title: "", img: "", link: "", price: "")]
         let split = str.components(separatedBy: "\"shopping_results\"")
+      //  print(split[1])
         //   print("\n\n\n")
         //should be 2 elements
         // print(split.count)
@@ -78,12 +83,14 @@ class ProductList{
         
         // products = list of products with all the extra characters and info
         let productsSplit = split[1].components(separatedBy: "},\n    {")
+      //  print(productsSplit[1])
         //   print(products.count) //61
         //   print(products[0]) //index out of range
         //     print(products[1])
         //     print("\n\n\n")
         for p in productsSplit{
             //each product with all the extra characters separated by line
+        //    print(p)
             let productI = p.components(separatedBy: CharacterSet.newlines)
             let newProduct = initProductI(productI: productI)
             products.append(newProduct)
@@ -99,7 +106,7 @@ class ProductList{
         var newImg: String = ""
         var newLink: String = ""
         var newPrice: String  = ""
-        var priceStr: String = ""
+   //     var priceStr: String = ""
         
         //     let endCount = productI.count - 1
         //  let startCount = 0
@@ -112,9 +119,9 @@ class ProductList{
                 let startIndex = s.index(s.startIndex, offsetBy: 16)
                 let endIndex = s.index(s.endIndex, offsetBy: -2)
                 newTitle = String(s[startIndex..<endIndex])
-            } else if s.contains("extracted_price"){
-                let startIndex = s.index(s.startIndex, offsetBy: 25)
-                let endIndex = s.index(s.endIndex, offsetBy: -1)
+            } else if s.contains("\"price\""){
+                let startIndex = s.index(s.startIndex, offsetBy: 16)
+                let endIndex = s.index(s.endIndex, offsetBy: -2)
                 newPrice = String(s[startIndex..<endIndex])
                 // priceStr = s
             }else if s.contains("link") && !s.contains("product_link"){
@@ -127,19 +134,19 @@ class ProductList{
                 let endIndex = s.index(s.endIndex, offsetBy: -2)
                 newImg = String(s[startIndex..<endIndex])
                 //                imageView.sd_setImage(with: URL(string: newImg), placeholderImage: UIImage(named: "placeholder.png"))
-                let imageUrlString = "http://cdn.playbuzz.com/cdn/38402fff-32a3-4e78-a532-41f3a54d04b9/cc513a85-8765-48a5-8481-98740cc6ccdc.jpg"
+         //       let imageUrlString = "http://cdn.playbuzz.com/cdn/38402fff-32a3-4e78-a532-41f3a54d04b9/cc513a85-8765-48a5-8481-98740cc6ccdc.jpg"
                 
-                let imageUrl = URL(string: imageUrlString)!
+         //       let imageUrl = URL(string: imageUrlString)!
                 
-                let imageData = try! Data(contentsOf: imageUrl)
+         //       let imageData = try! Data(contentsOf: imageUrl)
                 
-                let image = UIImage(data: imageData)
+            //    let image = UIImage(data: imageData)
                 //newImg = s
                 
                 
                 
                 //
-                newPrice = ""//priceStr.toDouble()!
+               // newPrice = ""//priceStr.toDouble()!
             }
         }
             
