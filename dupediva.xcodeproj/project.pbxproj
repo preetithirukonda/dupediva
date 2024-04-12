@@ -50,6 +50,7 @@
 		3AC17E8AA0F604F2502DA627 /* Pods-dupediva-dupedivaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva-dupedivaUITests.debug.xcconfig"; path = "Target Support Files/Pods-dupediva-dupedivaUITests/Pods-dupediva-dupedivaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E73B3D7C8C56F329ACA2EA8 /* Pods-dupedivaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupedivaTests.debug.xcconfig"; path = "Target Support Files/Pods-dupedivaTests/Pods-dupedivaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A71E7B1B2BC89C820016CDE7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		A71E7B1D2BC97FDB0016CDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A7D712FB2BC4E7AE006BBD20 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 		A7E80DE32BBDE1650064DC75 /* dupediva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dupediva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dupedivaApp.swift; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 		A7E80DE52BBDE1650064DC75 /* dupediva */ = {
 			isa = PBXGroup;
 			children = (
+				A71E7B1D2BC97FDB0016CDE7 /* Info.plist */,
 				A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */,
 				A7E80DE82BBDE1650064DC75 /* ContentView.swift */,
 				A7E80E152BBDE5D20064DC75 /* Landing.swift */,
@@ -577,6 +579,7 @@
 				DEVELOPMENT_TEAM = 4ATUTZBYJ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dupediva/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -618,6 +621,7 @@
 				DEVELOPMENT_TEAM = 4ATUTZBYJ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dupediva/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;

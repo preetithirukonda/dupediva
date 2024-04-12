@@ -150,15 +150,14 @@ struct SearchView: View{
     
     var body: some View{
         // var img1: UIImage
-        Text("Search view")
         VStack{
+            Text("Search view")
             var image: UIImage? = displayImg(url: "HI")
             if let img = image {
                 Image(uiImage: img)
             } else {
                 Text("Loading image...")
             }
-            
         }
         
         //  print("in second view")
@@ -199,6 +198,7 @@ func displayImg(url: String) -> UIImage{
                 if let imageData = data {
                     // Finally convert that Data into an image and do what you wish with it.
                     let image = UIImage(data: imageData)
+                    print("image data worked")
                     // Do something with your image.
                 } else {
                     print("Couldn't get image: Image is nil")
