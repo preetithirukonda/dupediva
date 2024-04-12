@@ -50,7 +50,7 @@ struct LandingView: View{
                         
                         Button(action: {
                     //navigateToStoryboardView()
-                            NavigationLink(destination: UIStoryboard())
+                            NavigationLink("link", destination: SearchView())
                          }) {
                            Text("Search for Similar Products!")
                           }
@@ -161,31 +161,24 @@ struct LandingView: View{
         }
     }
     
-    private func navigateToStoryboardView() {
-            // Load the storyboard file
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
-
-        // Attempt to instantiate the view controller with the specified identifier
-        // Attempt to instantiate the view controller with the specified identifier
-        if let viewController = storyboard.instantiateViewController(withIdentifier: "MyViewController") as? MyViewController {
-            // Use the view controller here
-        } else {
-            print("Unable to instantiate view controller from storyboard.")
-        }
-            
-            // Present the view controller
-            UIApplication.shared.windows.first?.rootViewController?.present(viewController, animated: true, completion: nil)
-        }
+//    private func navigateToStoryboardView() {
+//            // Load the storyboard file
+//        let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
+//
+//        // Attempt to instantiate the view controller with the specified identifier
+//        // Attempt to instantiate the view controller with the specified identifier
+//        if let viewController = storyboard.instantiateViewController(withIdentifier: "MyViewController") as? StoryboardView {
+//            // Use the view controller here
+//        } else {
+//            print("Unable to instantiate view controller from storyboard.")
+//        }
+//            
+//            // Present the view controller
+//            UIApplication.shared.windows.first?.rootViewController?.present(viewController, animated: true, completion: nil)
+//        }
 }
 
 struct SearchView: View{
-    @State var color:String = ""
-    @State var material:String = ""
-    @State var product:String = ""
-    @State var price:Double = 0
-    @State var link:String = ""
-    @State var imgLink:String = ""
-    
     
     var body: some View{
         Text("Search view")
@@ -267,5 +260,18 @@ struct PurpleButtonStyle: ButtonStyle {
         // .background(Color.init(red: 0.818, green: 0.688, blue: 0.095))
         //.foregroundColor(.white)
         //.cornerRadius(10)
+    }
+}
+
+struct StoryboardWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "StoryboardView") as? StoryboardView else {
+            fatalError("StoryboardView not implemented in storyboard")
+        }
+        return viewController
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        // update code
     }
 }

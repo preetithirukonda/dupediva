@@ -9,14 +9,19 @@ import Foundation
 import UIKit
 
 
-class StoryboardView: UIViewController, DetailView {
+class StoryboardView: UIViewController  {
     
-    var presenter: MovieDetailPresenter!
-    var movie: Movie?
     
-    @IBOutlet weak var lblMovieYear: UILabel!
-    @IBOutlet weak var lblMovieTitle: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    //    @IBOutlet weak var lblMovieYear: UILabel!
+    //    @IBOutlet weak var lblMovieTitle: UILabel!
     @IBOutlet weak var movieImage: UIImageView!
-    @IBOutlet weak var lblMovieRating: UILabel!
-    @IBOutlet weak var lblMovieOverview: UILabel!
+    //    @IBOutlet weak var lblMovieRating: UILabel!
+    //    @IBOutlet weak var lblMovieOverview: UILabel!
+    
+    
+    
 }
