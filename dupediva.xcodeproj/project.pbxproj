@@ -10,6 +10,7 @@
 		015D51262C38AA1D68D595B2 /* Pods_dupediva_dupedivaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66C66C8489D1A8207E0450D /* Pods_dupediva_dupedivaUITests.framework */; };
 		65E02B829376BB308C828F6E /* Pods_dupedivaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A33E784C278E0A81E6E587 /* Pods_dupedivaTests.framework */; };
 		7CDBF8AA2BC61CC300961741 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDBF8A92BC61CC300961741 /* GoogleGenerativeAI */; };
+		A71E7B1C2BC89C820016CDE7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71E7B1B2BC89C820016CDE7 /* Product.swift */; };
 		A7D712FC2BC4E7AF006BBD20 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D712FB2BC4E7AE006BBD20 /* OtherView.swift */; };
 		A7E80DE72BBDE1650064DC75 /* dupedivaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */; };
 		A7E80DE92BBDE1650064DC75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E80DE82BBDE1650064DC75 /* ContentView.swift */; };
@@ -48,6 +49,7 @@
 		36A33E784C278E0A81E6E587 /* Pods_dupedivaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dupedivaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC17E8AA0F604F2502DA627 /* Pods-dupediva-dupedivaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupediva-dupedivaUITests.debug.xcconfig"; path = "Target Support Files/Pods-dupediva-dupedivaUITests/Pods-dupediva-dupedivaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E73B3D7C8C56F329ACA2EA8 /* Pods-dupedivaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dupedivaTests.debug.xcconfig"; path = "Target Support Files/Pods-dupedivaTests/Pods-dupedivaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A71E7B1B2BC89C820016CDE7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		A7D712FB2BC4E7AE006BBD20 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 		A7E80DE32BBDE1650064DC75 /* dupediva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dupediva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dupedivaApp.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				A7E80DE62BBDE1650064DC75 /* dupedivaApp.swift */,
 				A7E80DE82BBDE1650064DC75 /* ContentView.swift */,
 				A7E80E152BBDE5D20064DC75 /* Landing.swift */,
+				A71E7B1B2BC89C820016CDE7 /* Product.swift */,
 				A7ED3FE62BC6392E000D0156 /* ImagePicker.swift */,
 				A7E80E172BC303500064DC75 /* AnalyzePage.swift */,
 				A7E80DEA2BBDE1650064DC75 /* Item.swift */,
@@ -401,6 +404,7 @@
 			files = (
 				A7E80DE92BBDE1650064DC75 /* ContentView.swift in Sources */,
 				A7E80E162BBDE5D20064DC75 /* Landing.swift in Sources */,
+				A71E7B1C2BC89C820016CDE7 /* Product.swift in Sources */,
 				A7E80E182BC303500064DC75 /* AnalyzePage.swift in Sources */,
 				A7ED3FE72BC6392E000D0156 /* ImagePicker.swift in Sources */,
 				A7E80DEB2BBDE1650064DC75 /* Item.swift in Sources */,

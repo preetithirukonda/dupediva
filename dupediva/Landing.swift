@@ -17,7 +17,7 @@ struct LandingView: View{
     @State public var selectedImage: UIImage?
     @State var isAPIButtonPressed: Bool = false
     @State var isCamShowing = false
-    
+    @State var productList: [Product] =  [Product(title: "", img: "", link: "", price: "")]
     @State var str: String = ""
     
     
@@ -41,6 +41,7 @@ struct LandingView: View{
                         
                         Button(action: {
                             print("button tapped")
+                           // ImagePicker.APIrequest()
                             //let _ = performAPICall(selectedImage: $selectedImage)
                             //performAPICall()
                         },
@@ -74,7 +75,7 @@ struct LandingView: View{
                             }.buttonStyle(PurpleButtonStyle())
                                 .sheet(isPresented: $isPickerShowing, onDismiss: nil){
                                     //image picker
-                                    ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                                    ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, productList: $productList)
                                 }
                             //camera
                             Button{
@@ -84,7 +85,7 @@ struct LandingView: View{
                             }.buttonStyle(PurpleButtonStyle())
                                 .sheet(isPresented: $isCamShowing, onDismiss: nil){
                                     //image cam
-                                    ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing)
+                                    ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing, productList: $productList)
                                 }
                         }.padding()
                         
@@ -104,7 +105,7 @@ struct LandingView: View{
                         }.buttonStyle(PurpleButtonStyle())
                             .sheet(isPresented: $isPickerShowing, onDismiss: nil){
                                 //image picker
-                                ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                                ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, productList: $productList)
                             }
                         //camera
                         Button{
@@ -114,7 +115,7 @@ struct LandingView: View{
                         }.buttonStyle(PurpleButtonStyle())
                             .sheet(isPresented: $isCamShowing, onDismiss: nil){
                                 //image cam
-                                ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing)
+                                ImageCam(selectedImage: $selectedImage, isCamShowing: $isCamShowing, productList: $productList)
                             }
                     }.padding()
                     
@@ -144,15 +145,9 @@ struct LandingView: View{
     }
 }
 
+//this is the page that has all the similar products
 struct SearchView: View{
-    @State var color:String = ""
-    @State var material:String = ""
-    @State var product:String = ""
-    @State var price:Double = 0
-    @State var link:String = ""
-    @State var imgLink:String = ""
-    
-    
+ 
     var body: some View{
         Text("Search view")
         //  print("in second view")
@@ -161,6 +156,7 @@ struct SearchView: View{
             
         }label: {
             Text("hi")
+         
             //Text(ImagePicker(selectedImage: LandingView().$selectedImage, isPickerShowing: LandingView().$isPickerShowing).APIrequest());
         }
         //let _ = performAPICall(selectedImage: $selectedImage)
@@ -210,6 +206,7 @@ struct SheetView: View{
 
 struct TestView_Previews: PreviewProvider{
     static var previews: some View{
+     //   var list:[Product] = [Product(title: "", img: "", link: "", price: -1)]
         LandingView()
     }
 }

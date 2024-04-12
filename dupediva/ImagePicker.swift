@@ -1,3 +1,4 @@
+
 //
 //  ImagePicker.swift
 //  cameratest
@@ -15,6 +16,7 @@ struct ImagePicker: UIViewControllerRepresentable{
     
     @Binding var selectedImage: UIImage?
     @Binding var isPickerShowing: Bool
+    @Binding var productList: [Product]
   //  @Binding var donePicking: Bool
     
     public func APIrequest() -> Void {
@@ -49,7 +51,13 @@ struct ImagePicker: UIViewControllerRepresentable{
                         } else if let data = data {
                             
                             let str = String(data: data, encoding: .utf8)!
+                            //str has all the data in the "json file"
                             print(str)
+                            print("\n\n\n\n\n")
+                            productList =  ProductList.parse(str: str)
+                            for p in productList{
+                                print(p.toString())
+                            }
                             
                         }
                     
@@ -85,7 +93,7 @@ struct ImagePicker: UIViewControllerRepresentable{
 //            let r = response.text?.components(separatedBy: "text")
 //            let r2 = r![0]
 //            print(r2)
-//            
+//
 //            let u2 = "https://serpapi.com/search.json?engine=google_shopping&api_key=60096f2733c30de4c45e10637bdf2ba916af5e73ed563122b39f40e85bbcb5a5&q=" + r2;
 //            let url = URL(string: u2)!
 //            var request = URLRequest(url: url)
@@ -93,17 +101,17 @@ struct ImagePicker: UIViewControllerRepresentable{
 //                    if let error = error {
 //                        print(error)
 //                    } else if let data = data {
-//                        
+//
 //                        let str = String(data: data, encoding: .utf8)!
 //                        print(str)
-//                        
+//
 //                    }
-//                
+//
 //            }
 //            task2.resume()
 //        }
 //    }
-//    
+//
 }
 
 class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
