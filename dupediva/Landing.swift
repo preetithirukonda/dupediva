@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 public var isPickerShowing = false
-
+public var registered = false
 
 struct LandingView: View{
     @State private var showSheet: Bool = false
@@ -38,9 +38,9 @@ struct LandingView: View{
                                     .stroke(Color.purple, lineWidth: 4))
                             .frame(width:300, height:400)
                         //api button
-                        
                         Button(action: {
                             print("button tapped")
+                            
                             // ImagePicker.APIrequest()
                             //let _ = performAPICall(selectedImage: $selectedImage)
                             //performAPICall()
@@ -96,7 +96,7 @@ struct LandingView: View{
                     
                 }else{
                     //upload and camera buttons
-                    
+                    Image("home")
                     HStack{
                         Button{
                             isPickerShowing = true
@@ -125,13 +125,13 @@ struct LandingView: View{
                     Button(
                         action:{
                             
-                            print("test")
-                            
+                            print("test1")
                             showSheet.toggle()
                             
                         },
                         label:{
-                            Text("Login")
+                                Text("Login")
+                            
                         }
                     ).buttonStyle(PurpleButtonStyle()) .sheet(isPresented: $showSheet){
                         SheetView(isSheetShowing: $showSheet)
@@ -233,6 +233,8 @@ struct SheetView: View{
     var body: some View{
         NavigationView{
             ScrollView{
+                Image("top")
+
                 VStack{
                     HStack{
                         Text("Username:")
@@ -246,7 +248,7 @@ struct SheetView: View{
                     Button(
                         action:{
                             
-                            print("test")
+                            print("test2")
                             isSheetShowing = false
                         },
                         label:{
