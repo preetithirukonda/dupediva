@@ -216,14 +216,16 @@ struct SearchView: View{
                 }
                 Text("Similar Products:")
                 
+              
+                
                 ForEach(productList.indices, id: \.self) { index in
                     let product = productList[index]
                     Button(action: {
-                      if let url = URL(string: product.link) {
-                       UIApplication.shared.open(url)
-                      }
+                        if let url = URL(string: product.link) {
+                            UIApplication.shared.open(url)
+                        }
                     }) {
-                        VStack {
+                        HStack {
                             if let imageURL = URL(string: product.getImg()), let imageData = try? Data(contentsOf: imageURL), let image = UIImage(data: imageData) {
                                 Image(uiImage: image)
                                     .resizable()
@@ -238,132 +240,132 @@ struct SearchView: View{
                                 Text(product.getPrice())
                             }
                         }
-                    }
-                        
-//                        if let imageURL = URL(string: product.getImg()), let imageData = try? Data(contentsOf: imageURL), let image = UIImage(data: imageData) {
-//                            Image(uiImage: image)
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 140, height: 140)
-//                            
-//                        } else{
-//                            Text("Loading image...")
-//                        }
-//                    }
-//                    VStack{
-//                        Text(productList[index].getTitle())
-//                        Text(product.getPrice())
-//                    }
-                    
-                    
-                    
-                    //similar product #1
-                    HStack{
-                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
-                        
-                        //                    Button(action: {
-                        //                            if let url = URL(string: productList[1].getImg()) {
-                        //                                UIApplication.shared.open(url)
-                        //                            }
-                        //                    }) {
-                        
-                        var image: UIImage? = displayImg(url: productList[1].getImg())
                         
                         
-                        if let img = image {
-                            Image(uiImage: img)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:140, height:140)
-                        } else {
-                            Text("Loading image...")
-                        }
-                        VStack{
-                            Text(productList[1].getTitle())
-                            Text(productList[1].getPrice())
-                        }
-                    }
-                    
-                    HStack{
-                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                        //                        if let imageURL = URL(string: product.getImg()), let imageData = try? Data(contentsOf: imageURL), let image = UIImage(data: imageData) {
+                        //                            Image(uiImage: image)
+                        //                                .resizable()
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                                .frame(width: 140, height: 140)
+                        //
+                        //                        } else{
+                        //                            Text("Loading image...")
+                        //                        }
+                        //                    }
+                        //                    VStack{
+                        //                        Text(productList[index].getTitle())
+                        //                        Text(product.getPrice())
+                        //                    }
                         
-                        var image: UIImage? = displayImg(url: productList[2].getImg())
-                        if let img = image {
-                            Image(uiImage: img) .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:140, height:140)
-                        } else {
-                            Text("Loading image...")
-                        }
-                        VStack{
-                            Text(productList[2].getTitle())
-                            Text(productList[2].getPrice())
-                        }
-                    }
-                    HStack{
-                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
                         
-                        var image: UIImage? = displayImg(url: productList[3].getImg())
-                        if let img = image {
-                            Image(uiImage: img) .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:140, height:140)
-                        } else {
-                            Text("Loading image...")
-                        }
-                        VStack{
-                            Text(productList[3].getTitle())
-                            Text(productList[3].getPrice())
-                        }
-                    }
-                    HStack{
-                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
                         
-                        var image: UIImage? = displayImg(url: productList[4].getImg())
-                        if let img = image {
-                            Image(uiImage: img) .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:140, height:140)
-                        } else {
-                            Text("Loading image...")
-                        }
-                        VStack{
-                            Text(productList[4].getTitle())
-                            Text(productList[4].getPrice())
-                        }
-                    }
-                    HStack{
-                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                        //                    //similar product #1
+                        //                    HStack{
+                        //                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                        //
+                        //                        //                    Button(action: {
+                        //                        //                            if let url = URL(string: productList[1].getImg()) {
+                        //                        //                                UIApplication.shared.open(url)
+                        //                        //                            }
+                        //                        //                    }) {
+                        //
+                        //                        var image: UIImage? = displayImg(url: productList[1].getImg())
+                        //
+                        //
+                        //                        if let img = image {
+                        //                            Image(uiImage: img)
+                        //                                .resizable()
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                                .frame(width:140, height:140)
+                        //                        } else {
+                        //                            Text("Loading image...")
+                        //                        }
+                        //                        VStack{
+                        //                            Text(productList[1].getTitle())
+                        //                            Text(productList[1].getPrice())
+                        //                        }
+                        //                    }
                         
-                        var image: UIImage? = displayImg(url: productList[5].getImg())
-                        if let img = image {
-                            Image(uiImage: img) .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:140, height:140)
-                        } else {
-                            Text("Loading image...")
-                        }
-                        VStack{
-                            Text(productList[5].getTitle())
-                            Text(productList[5].getPrice())
-                        }
+                        //                    HStack{
+                        //                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                        //
+                        //                        var image: UIImage? = displayImg(url: productList[2].getImg())
+                        //                        if let img = image {
+                        //                            Image(uiImage: img) .resizable()
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                                .frame(width:140, height:140)
+                        //                        } else {
+                        //                            Text("Loading image...")
+                        //                        }
+                        //                        VStack{
+                        //                            Text(productList[2].getTitle())
+                        //                            Text(productList[2].getPrice())
+                        //                        }
+                        //                    }
+                        //                    HStack{
+                        //                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                        //
+                        //                        var image: UIImage? = displayImg(url: productList[3].getImg())
+                        //                        if let img = image {
+                        //                            Image(uiImage: img) .resizable()
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                                .frame(width:140, height:140)
+                        //                        } else {
+                        //                            Text("Loading image...")
+                        //                        }
+                        //                        VStack{
+                        //                            Text(productList[3].getTitle())
+                        //                            Text(productList[3].getPrice())
+                        //                        }
+                        //                    }
+                        //                    HStack{
+                        //                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                        //
+                        //                        var image: UIImage? = displayImg(url: productList[4].getImg())
+                        //                        if let img = image {
+                        //                            Image(uiImage: img) .resizable()
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                                .frame(width:140, height:140)
+                        //                        } else {
+                        //                            Text("Loading image...")
+                        //                        }
+                        //                        VStack{
+                        //                            Text(productList[4].getTitle())
+                        //                            Text(productList[4].getPrice())
+                        //                        }
+                        //                    }
+                        //                    HStack{
+                        //                        //    var image: UIImage? = displayImg(url: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTnchZtiV1F2RkVlkD0tTrbu8U46w1tKWKgn8cHGp6eUnOmLsaeBe2LlwkQslwucWN6_Rrq92q9ew8F6hQREeZZRql_FF0az-GQoIKIplI&usqp=CAE")
+                        //
+                        //                        var image: UIImage? = displayImg(url: productList[5].getImg())
+                        //                        if let img = image {
+                        //                            Image(uiImage: img) .resizable()
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                                .frame(width:140, height:140)
+                        //                        } else {
+                        //                            Text("Loading image...")
+                        //                        }
+                        //                        VStack{
+                        //                            Text(productList[5].getTitle())
+                        //                            Text(productList[5].getPrice())
+                        //                        }
+                        //                    }
                     }
                 }
+                
+                
+                //  print("in second view")
+                //  Text(str)
+                //        Button{
+                //        }label: {
+                //            Text("hi")
+                //Text(ImagePicker(selectedImage: LandingView().$selectedImage, isPickerShowing: LandingView().$isPickerShowing).APIrequest());
+                //        }
+                //let _ = performAPICall(selectedImage: $selectedImage)
+                
+                
+                
             }
-            
-            
-            //  print("in second view")
-            //  Text(str)
-            //        Button{
-            //        }label: {
-            //            Text("hi")
-            //Text(ImagePicker(selectedImage: LandingView().$selectedImage, isPickerShowing: LandingView().$isPickerShowing).APIrequest());
-            //        }
-            //let _ = performAPICall(selectedImage: $selectedImage)
-            
-            
-            
-            
             
         }
     }
